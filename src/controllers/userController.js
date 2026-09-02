@@ -6,6 +6,7 @@ const userService = require('../services/userService');
  */
 const register = async (req, res, next) => {
   try {
+  
     const user = await userService.registerUser(req.body);
     res.status(201).json({ success: true, message: 'Account created successfully.', data: user });
   } catch (err) {
@@ -24,6 +25,7 @@ const login = async (req, res, next) => {
       return res.status(400).json({ success: false, message: 'Email and password are required.' });
     }
     const result = await userService.loginUser(email, password);
+
     res.json({ success: true, message: 'Login successful.', data: result });
   } catch (err) {
     next(err);
@@ -36,6 +38,7 @@ const login = async (req, res, next) => {
  */
 const getMe = async (req, res, next) => {
   try {
+  
     const user = await userService.getUserById(req.user.id);
     res.json({ success: true, data: user });
   } catch (err) {
@@ -49,6 +52,7 @@ const getMe = async (req, res, next) => {
  */
 const getAllUsers = async (req, res, next) => {
   try {
+
     const users = await userService.getAllUsers();
     res.json({ success: true, count: users.length, data: users });
   } catch (err) {
