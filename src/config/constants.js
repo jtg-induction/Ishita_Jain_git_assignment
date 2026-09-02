@@ -57,6 +57,7 @@ module.exports = {
       MT: 0.00,
     },
     TAX_EXEMPT_CATEGORIES: ['food-beverage'],
+  },
 
     // --- Discount Codes ---
     DISCOUNT_CONFIG: {
@@ -78,6 +79,6 @@ module.exports = {
 
     // --- Cache ---
     CACHE_TTL_SECONDS: 60,
-  }
 }
+
 
